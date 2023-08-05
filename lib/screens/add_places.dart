@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 
-class AddPlacesScreen extends StatelessWidget {
+class AddPlacesScreen extends StatefulWidget {
   const AddPlacesScreen({super.key});
+
+  @override
+  State<AddPlacesScreen> createState() => _AddPlacesScreenState();
+}
+
+class _AddPlacesScreenState extends State<AddPlacesScreen> {
+
+  final _titleController = TextEditingController();
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +33,7 @@ class AddPlacesScreen extends StatelessWidget {
                   label: Text('Title'),
                 ),
                 maxLength: 50,
+                controller: _titleController,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
