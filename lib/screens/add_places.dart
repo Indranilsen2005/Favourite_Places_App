@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:favourite_places/widgets/image_input.dart';
 import 'package:favourite_places/providers/user_places.dart';
 
 class AddPlacesScreen extends ConsumerStatefulWidget {
@@ -36,7 +37,7 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
       appBar: AppBar(
         title: const Text('Add New Place'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
@@ -52,7 +53,9 @@ class _AddPlacesScreenState extends ConsumerState<AddPlacesScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 40),
+            const ImageInput(),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: _addPlace,
               child: const Text('Add Place'),
