@@ -34,6 +34,9 @@ class PlacesList extends StatelessWidget {
                 ),
               );
             },
+            leading: CircleAvatar(
+              backgroundImage: FileImage(places[index].image),
+            ),
             title: Text(
               places[index].title,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
